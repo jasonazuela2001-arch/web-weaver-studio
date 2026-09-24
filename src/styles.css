@@ -129,9 +129,9 @@ h2 { font-size: clamp(36px, 4.3vw, 64px); line-height: 1.08; letter-spacing: 0; 
 .button-light { align-self: flex-start; margin-top: 8px; background: var(--primary-foreground); color: var(--deep); }.button-light:hover { background: var(--accent); }
 .form-success { display: flex; align-items: center; gap: 8px; color: var(--primary-foreground); font-size: 12px; }
 footer { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; min-height: 105px; padding: 0 max(7vw, 28px); background: var(--deep); color: color-mix(in oklch, var(--primary-foreground) 55%, transparent); border-top: 1px solid color-mix(in oklch, var(--primary-foreground) 12%, transparent); font-size: 10px; } footer .brand-mark { color: var(--primary-foreground); } footer span:last-child { justify-self: end; }
-.hero-enter { opacity: 0; animation: enter .65s ease forwards; }.hero-delay-one { animation-delay: .12s; }.hero-delay-two { animation-delay: .23s; }.hero-delay-three { animation-delay: .34s; }
+.hero-enter { opacity: 1; animation: heroReveal .65s ease both; }.hero-delay-one { animation-delay: .12s; }.hero-delay-two { animation-delay: .23s; }.hero-delay-three { animation-delay: .34s; }
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }.reveal.is-visible { opacity: 1; transform: translateY(0); }
-@keyframes enter { to { opacity: 1; transform: translateY(0); } from { opacity: 0; transform: translateY(22px); } }
+@keyframes heroReveal { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes rotate { to { transform: rotate(360deg); } }
 @keyframes signal { 0% { transform: translate(0,0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translate(130px,-82px); opacity: 0; } }
 @media (max-width: 1020px) { .hero-section { grid-template-columns: 1fr 430px; gap: 40px; }.skill-grid { grid-template-columns: repeat(2, 1fr); }.about-grid { gap: 8vw; } }
