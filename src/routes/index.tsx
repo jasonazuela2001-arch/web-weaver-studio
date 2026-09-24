@@ -19,6 +19,7 @@ import {
   Zap,
 } from "lucide-react";
 import { FormEvent, useEffect, useState } from "react";
+import portraitAsset from "@/assets/jason-azuela-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -60,11 +61,11 @@ const skills = [
     tags: ["AI agents", "Prompt systems", "Knowledge bases"],
   },
   {
-    icon: Network,
+    icon: Database,
     number: "03",
-    title: "System Connection",
-    description: "Connect disconnected apps, data, and teams into one coordinated operational flow with fewer handoffs.",
-    tags: ["APIs", "Webhooks", "Data sync"],
+    title: "CRM & EHR Management",
+    description: "Keep customer and patient information accurate across connected systems while reducing repetitive data handling.",
+    tags: ["Salesforce", "EPIC", "OneSource", "Availity"],
   },
   {
     icon: Zap,
@@ -77,22 +78,28 @@ const skills = [
 
 const experience = [
   {
-    label: "Operations",
-    title: "End-to-end workflow systems",
-    description: "Automated intake, routing, approvals, notifications, and reporting so teams can focus on decisions—not data entry.",
+    label: "Current role",
+    title: "Automation Specialist",
+    description: "Designing AI-assisted workflows that simplify repetitive tasks, connect business tools, and improve day-to-day operational efficiency.",
     icon: Settings2,
   },
   {
-    label: "Intelligence",
-    title: "AI-assisted knowledge work",
-    description: "Built systems that classify requests, extract structured data, draft responses, and surface the right context at the right time.",
-    icon: Sparkles,
+    label: "March 2026 — July 2026",
+    title: "Senior Associate, Pre-Registration",
+    description: "Managed patient pre-registration, insurance eligibility, appointment details, EHR updates, and rework tickets at R1 RCM Philippines.",
+    icon: Database,
   },
   {
-    label: "Infrastructure",
-    title: "Reliable connected ecosystems",
-    description: "Designed secure integrations across CRMs, forms, spreadsheets, databases, and communication platforms with clear fail-safes.",
-    icon: Database,
+    label: "August 2024 — February 2026",
+    title: "Customer Advocate",
+    description: "Supported provider clinics with coverage, benefits, eligibility, authorization, claims, appeals, and CRM-based escalations at Concentrix.",
+    icon: Network,
+  },
+  {
+    label: "2023 — 2024",
+    title: "Customer Care & Technical Support",
+    description: "Resolved booking, account, connectivity, and equipment concerns across phone, chat, and email for international customers and small businesses.",
+    icon: Code2,
   },
 ];
 
@@ -195,10 +202,14 @@ function Portfolio() {
       <section id="about" className="section about-section reveal">
         <div className="section-label"><span>01</span> About me</div>
         <div className="about-grid">
-          <h2>Automation should make work feel <em>lighter</em>—not more complicated.</h2>
+          <div className="about-portrait-wrap">
+            <img className="about-portrait" src={portraitAsset.url} alt="Jason Azuela, AI automation specialist" />
+            <span>Jason Azuela · Naga City, Philippines</span>
+          </div>
           <div className="about-copy">
-            <p>I help businesses replace fragmented, repetitive processes with thoughtful automation. My work starts by understanding how your team actually operates, then designing a system that supports it.</p>
-            <p>The result is practical AI: fewer handoffs, cleaner data, faster responses, and workflows your team can trust.</p>
+            <h2>Automation should make work feel <em>lighter</em>—not more complicated.</h2>
+            <p>I’m an Automation Specialist with three years of customer operations experience across healthcare, travel, telecommunications, and small-business support.</p>
+            <p>My background in CRM and EHR platforms gives me a practical understanding of how information moves through real teams. I combine that operational experience with AI tools to build accurate, dependable workflows.</p>
             <div className="principle"><span>My principle</span><strong>Automate the routine. Elevate the human.</strong></div>
           </div>
         </div>
@@ -241,7 +252,11 @@ function Portfolio() {
           <div className="section-label light-label"><span>04</span> Contact</div>
           <h2>Have a process that should run <em>smarter?</em></h2>
           <p>Tell me where your team is losing time. I’ll help you find the clearest path to a better workflow.</p>
-          <a className="contact-email" href="mailto:hello@jasonazuela.com"><Mail size={18} /> hello@jasonazuela.com</a>
+          <div className="contact-links">
+            <a className="contact-email" href="mailto:jasonazuela2001@gmail.com"><Mail size={18} /> jasonazuela2001@gmail.com</a>
+            <a className="contact-email" href="tel:+639319849926"><span className="contact-symbol">☎</span> +63 931 984 9926</a>
+            <a className="contact-email" href="https://www.linkedin.com/in/jason-azuela-7372aa287" target="_blank" rel="noreferrer"><span className="contact-symbol">in</span> linkedin.com/in/jason-azuela-7372aa287</a>
+          </div>
         </div>
         <form className="contact-form" onSubmit={submitContact}>
           <label>Name<input name="name" required placeholder="Your name" /></label>
